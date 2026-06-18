@@ -4,7 +4,7 @@
 
 ## 分叉原因
 
-白霜拼音 1.0.4 版本的 fcitx5 词库基本上没法用，因此从 1.0.3 拉出独立分支进行维护。
+白霜拼音 1.0.4 版本的 fcitx5 词库输入命中率骤降，因此从 1.0.3 拉出独立分支进行维护。
 
 ## 维护目标
 
@@ -20,7 +20,9 @@
 | `down.txt` | 需要降频的词条配置 |
 | `up.txt` | 需要升频的词条配置 |
 
-## 使用方法
+## 脚本使用方法
+
+### gen.py 用于合并最终文件
 
 ```bash
 python gen.py frost_dict_for_fcitx5.txt output.txt down.txt up.txt
@@ -43,3 +45,9 @@ python gen.py frost_dict_for_fcitx5.txt output.txt down.txt up.txt
 ```
 
 在 `down.txt` 中表示该词词频除以 10；在 `up.txt` 中则表示乘以 10。
+
+### query.py 查询某个词的词频
+
+```bash
+python query.py <词库文件> <要查询的词>
+```
